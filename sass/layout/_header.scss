@@ -1,0 +1,76 @@
+/* ----------------header------------------- */
+.header {
+  border-bottom: 1px solid var(--background-color);
+  padding: 24px 0 25px;
+}
+.header-container {
+  @extend %align-items;
+}
+.header-nav {
+  @extend %align-items;
+}
+.header-logo {
+  color: #000;
+  margin-right: 93px;
+}
+
+.header-link {
+  // font-size: 14px;
+  // line-height: 1.14;
+  // font-weight: 500;
+  // letter-spacing: 0.02em;
+  @include font(14px, 1.14, 500, 00.02em);
+  color: var(--dark-text-color);
+  position: relative;
+}
+.header-list {
+  display: flex;
+}
+.header-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header-link:focus,
+.header-link:hover,
+.current,
+.header-tel-link:focus,
+.header-tel-link:hover {
+  color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  // width: 100%;
+  // height: 4px;
+  @include width-height(100%, 4px);
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  bottom: -32px;
+}
+
+.header-tel-list {
+  display: inline-flex;
+  margin-left: auto;
+}
+.header-tel-item + .header-tel-item {
+  margin-left: 50px;
+}
+.header-icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+.header-icon:hover,
+.header-icon:focus {
+  fill: var(--accent-color);
+}
+
+.header-tel-link {
+  display: inline-flex;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
